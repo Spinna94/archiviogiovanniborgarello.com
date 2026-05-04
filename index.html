@@ -28,28 +28,48 @@ nav {
 .nav-links a { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); text-decoration: none; transition: color 0.2s; }
 .nav-links a:hover { color: var(--dark); }
 
+/* HERO */
 .hero { position: relative; height: 100vh; overflow: hidden; }
 .slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.4s ease; }
 .slide.active { opacity: 1; }
-.slide-bg-img { width: 100%; height: 100%; object-fit: cover; object-position: center; filter: brightness(0.65); }
-.slide-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,24,20,0.72) 0%, rgba(26,24,20,0.05) 60%); }
-.slide-caption { position: absolute; bottom: 4.5rem; left: 3rem; z-index: 3; font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(245,240,232,0.4); }
-.hero-header { position: absolute; bottom: 5rem; left: 3rem; z-index: 10; pointer-events: none; }
-.hero-label { font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(245,240,232,0.55); margin-bottom: 1rem; }
-.hero-title { font-family: var(--font-display); font-size: clamp(3rem, 7vw, 6rem); font-weight: 500; line-height: 1.0; color: rgba(245,240,232,0.95); }
-.hero-title small { display: block; font-size: clamp(0.9rem, 2vw, 1.6rem); opacity: 0.5; margin-top: 0.4rem; font-style: italic; }
-.slide-indicators { position: absolute; bottom: 2.5rem; right: 3rem; z-index: 10; display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem; }
+.slide-bg-img { width: 100%; height: 100%; object-fit: cover; object-position: center; filter: brightness(0.62); }
+.slide-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,24,20,0.75) 0%, rgba(26,24,20,0.05) 55%); }
+
+/* Hero title — spaziatura aumentata tra le righe */
+.hero-header {
+  position: absolute; bottom: 5.5rem; left: 3rem; z-index: 10; pointer-events: none;
+}
+.hero-label {
+  font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: rgba(245,240,232,0.5); margin-bottom: 1.4rem;
+}
+.hero-title {
+  font-family: var(--font-display); font-size: clamp(3.2rem, 7vw, 6.5rem);
+  font-weight: 500; line-height: 1.05; color: rgba(245,240,232,0.95);
+}
+.hero-title small {
+  display: block; font-size: clamp(0.95rem, 2vw, 1.7rem);
+  opacity: 0.5; margin-top: 0.8rem; font-style: italic; line-height: 1;
+}
+
+.slide-indicators {
+  position: absolute; bottom: 2.5rem; right: 3rem; z-index: 10;
+  display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem;
+}
 .indicator { width: 20px; height: 1px; background: rgba(245,240,232,0.3); cursor: pointer; transition: all 0.3s; }
 .indicator.active { width: 40px; background: rgba(245,240,232,0.85); }
 
+/* SEZIONI */
 section { padding: 6rem 3rem; }
 .section-label { font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8rem; }
 .section-title { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 500; color: var(--dark); margin-bottom: 2rem; line-height: 1.2; }
 .divider { width: 40px; height: 1px; background: var(--accent); margin: 1.5rem 0; }
 
+/* GALLERIA */
 #galleria { background: #EDE7DA; }
 .gallery-intro { max-width: 560px; margin-bottom: 1rem; }
 .gallery-intro p { font-size: 0.88rem; color: var(--mid); }
+
 .decade-nav { display: flex; margin-bottom: 3.5rem; border-bottom: 1px solid var(--border); overflow-x: auto; }
 .decade-btn { padding: 0.8rem 1.8rem; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); background: none; border: none; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all 0.2s; font-family: var(--font-body); white-space: nowrap; }
 .decade-btn:hover { color: var(--dark); }
@@ -59,15 +79,15 @@ section { padding: 6rem 3rem; }
 .decade-header { margin-bottom: 2.5rem; }
 .decade-header h3 { font-family: var(--font-display); font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 500; color: var(--dark); margin-bottom: 0.5rem; }
 .decade-header p { font-size: 0.83rem; color: var(--mid); max-width: 580px; line-height: 1.85; }
-.masonry { columns: 3; column-gap: 1.2rem; }
-.masonry-item { break-inside: avoid; margin-bottom: 1.2rem; cursor: pointer; overflow: hidden; position: relative; }
-.masonry-item img { width: 100%; display: block; transition: transform 0.5s ease; }
-.masonry-item:hover img { transform: scale(1.03); }
-.masonry-item .overlay { position: absolute; inset: 0; background: rgba(26,24,20,0); transition: background 0.3s; display: flex; align-items: flex-end; padding: 0.8rem; }
-.masonry-item:hover .overlay { background: rgba(26,24,20,0.28); }
-.overlay-label { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: white; opacity: 0; transition: opacity 0.3s; }
-.masonry-item:hover .overlay-label { opacity: 1; }
 
+/* Masonry più compatta — colonne più strette */
+.masonry { columns: 4; column-gap: 1rem; }
+.masonry-item { break-inside: avoid; margin-bottom: 1rem; cursor: pointer; overflow: hidden; position: relative; }
+.masonry-item img { width: 100%; display: block; transition: transform 0.5s ease; }
+.masonry-item:hover img { transform: scale(1.04); }
+/* Nessun overlay label */
+
+/* LIGHTBOX */
 .lightbox { display: none; position: fixed; inset: 0; background: rgba(26,24,20,0.96); z-index: 1000; align-items: center; justify-content: center; }
 .lightbox.open { display: flex; }
 .lightbox img { max-width: 88vw; max-height: 88vh; object-fit: contain; }
@@ -78,6 +98,7 @@ section { padding: 6rem 3rem; }
 .lightbox-prev { left: 0.5rem; }
 .lightbox-next { right: 0.5rem; }
 
+/* BIOGRAFIA */
 #biografia { background: var(--cream); display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
 .bio-img-wrap img { width: 100%; display: block; }
 .bio-img-caption { margin-top: 0.8rem; font-size: 0.68rem; color: var(--mid); letter-spacing: 0.05em; }
@@ -89,6 +110,7 @@ section { padding: 6rem 3rem; }
 .bio-date-year { font-family: var(--font-display); font-weight: 500; color: var(--accent); min-width: 70px; }
 .bio-date-text { color: var(--mid); }
 
+/* ESPOSIZIONI */
 #esposizioni { background: #EDE7DA; }
 .expo-intro { max-width: 560px; margin-bottom: 1rem; }
 .expo-intro p { font-size: 0.88rem; color: var(--mid); }
@@ -115,6 +137,7 @@ section { padding: 6rem 3rem; }
 .museo-name { font-size: 0.82rem; color: var(--dark); }
 .museo-place { font-size: 0.72rem; color: var(--mid); margin-top: 0.1rem; }
 
+/* CHI SIAMO */
 #chisiamo { background: var(--dark); }
 #chisiamo .section-label { color: #A09070; }
 #chisiamo .section-title { color: var(--cream); }
@@ -124,6 +147,7 @@ section { padding: 6rem 3rem; }
 .chisiamo-box-label { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: #A09070; margin-bottom: 0.6rem; }
 .chisiamo-box-text { font-size: 0.83rem; color: rgba(245,240,232,0.55); line-height: 1.8; }
 
+/* CONTATTI */
 #contatti { background: var(--cream); display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
 .contact-info { display: flex; flex-direction: column; gap: 2rem; margin-top: 1rem; }
 .contact-row { padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
@@ -155,13 +179,15 @@ footer .footer-logo { font-family: var(--font-display); font-size: 0.88rem; colo
   </ul>
 </nav>
 
+<!-- HERO — immagini singole pulite, niente collage -->
 <div class="hero">
-  <div class="slide active"><img class="slide-bg-img" src="images/contemporaneo_marmo-legno-atelier_07.jpg" alt=""><div class="slide-overlay"></div><div class="slide-caption">Contemporaneo · Legno</div></div>
-  <div class="slide"><img class="slide-bg-img" src="images/anni8090_granito-avis-1990_16.jpg" alt=""><div class="slide-overlay"></div><div class="slide-caption">Anni Ottanta · Marmo</div></div>
-  <div class="slide"><img class="slide-bg-img" src="images/anni8090_marmo-figura-verticale_05.jpg" alt=""><div class="slide-overlay"></div><div class="slide-caption">Anni Novanta · Marmo</div></div>
-  <div class="slide"><img class="slide-bg-img" src="images/contemporaneo_atelier-sculture_11.jpg" alt=""><div class="slide-overlay"></div><div class="slide-caption">Contemporaneo · Legno · Atelier</div></div>
-  <div class="slide"><img class="slide-bg-img" src="images/anni8090_marmo-figura-prato_21.jpg" alt=""><div class="slide-overlay"></div><div class="slide-caption">Anni Novanta · Marmo</div></div>
-  <div class="slide"><img class="slide-bg-img" src="images/anni8090_legno-totem-campagna_08.jpg" alt=""><div class="slide-overlay"></div><div class="slide-caption">Anni Ottanta-Novanta · Legno</div></div>
+  <div class="slide active"><img class="slide-bg-img" src="images/contemporaneo_marmo-legno-atelier_07.jpg" alt=""><div class="slide-overlay"></div></div>
+  <div class="slide"><img class="slide-bg-img" src="images/anni8090_marmo-figura-verticale_05.jpg" alt=""><div class="slide-overlay"></div></div>
+  <div class="slide"><img class="slide-bg-img" src="images/contemporaneo_totem-legno_04.jpg" alt=""><div class="slide-overlay"></div></div>
+  <div class="slide"><img class="slide-bg-img" src="images/anni8090_marmo-figura-prato_21.jpg" alt=""><div class="slide-overlay"></div></div>
+  <div class="slide"><img class="slide-bg-img" src="images/anni8090_legno-totem-campagna_08.jpg" alt=""><div class="slide-overlay"></div></div>
+  <div class="slide"><img class="slide-bg-img" src="images/anni8090_granito-avis-1990_16.jpg" alt=""><div class="slide-overlay"></div></div>
+
   <div class="hero-header">
     <p class="hero-label">Scultore · Cambiano, Torino · 1950</p>
     <h1 class="hero-title">Giovanni<br>Borgarello<small>Archivio ufficiale</small></h1>
@@ -176,6 +202,7 @@ footer .footer-logo { font-family: var(--font-display); font-size: 0.88rem; colo
   </div>
 </div>
 
+<!-- GALLERIA -->
 <section id="galleria">
   <div class="gallery-intro">
     <p class="section-label">Le opere</p>
@@ -192,21 +219,18 @@ footer .footer-logo { font-family: var(--font-display); font-size: 0.88rem; colo
   <div class="decade-panel active" id="decade-70">
     <div class="decade-header">
       <h3>Anni Settanta</h3>
-      <p>Gli anni della formazione. Domina il legno — noce, frassino, essenze locali — lavorato con forza arcaica. Nascono le prime figure umane stilizzate, i grandi pannelli orizzontali scolpiti con segni e simboli, le sculture animali monumentali. È il decennio della ricerca intensa e della costruzione di un linguaggio personale.</p>
+      <p>Gli anni della formazione. Domina il legno — noce, frassino, essenze locali — lavorato con forza arcaica. Nascono i grandi pannelli orizzontali scolpiti con segni e simboli, le sculture animali monumentali, le prime figure umane stilizzate. È il decennio della ricerca intensa e della costruzione di un linguaggio personale.</p>
     </div>
     <div class="masonry">
-      <div class="masonry-item" data-src="images/anni70_pannelli-legno_01.jpg" data-decade="70"><img src="images/anni70_pannelli-legno_01.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni Settanta · Legno</span></div></div>
-      <div class="masonry-item" data-src="images/anni70_scultura-pantera_02.jpg" data-decade="70"><img src="images/anni70_scultura-pantera_02.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni Settanta · Legno</span></div></div>
-      <div class="masonry-item" data-src="images/anni70_figure-totem_03.jpg" data-decade="70"><img src="images/anni70_figure-totem_03.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni Settanta · Legno</span></div></div>
-      <div class="masonry-item" data-src="images/anni70_totem-legno-esposizione_04.jpg" data-decade="70"><img src="images/anni70_totem-legno-esposizione_04.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni Settanta · Legno</span></div></div>
-      <div class="masonry-item" data-src="images/anni70_sculture-legno-atelier_05.jpg" data-decade="70"><img src="images/anni70_sculture-legno-atelier_05.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni Settanta · Legno</span></div></div>
-      <div class="masonry-item" data-src="images/anni70_sculture-marmo-pietra_06.jpg" data-decade="70"><img src="images/anni70_sculture-marmo-pietra_06.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni Settanta · Legno e pietra</span></div></div>
-      <div class="masonry-item" data-src="images/anni70_pannelli-porta-legno_07.jpg" data-decade="70"><img src="images/anni70_pannelli-porta-legno_07.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni Settanta · Pannelli</span></div></div>
-      <div class="masonry-item" data-src="images/anni70_pannello-inciso-legno_08.jpg" data-decade="70"><img src="images/anni70_pannello-inciso-legno_08.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni Settanta · Esposizione</span></div></div>
-      <div class="masonry-item" data-src="images/anni70_atelier-pannelli_09.jpg" data-decade="70"><img src="images/anni70_atelier-pannelli_09.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni Settanta · Legno</span></div></div>
-      <div class="masonry-item" data-src="images/anni70_mostra-galleria_10.jpg" data-decade="70"><img src="images/anni70_mostra-galleria_10.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni Settanta · Legno</span></div></div>
-      <div class="masonry-item" data-src="images/anni70_pannelli-atelier_11.jpg" data-decade="70"><img src="images/anni70_pannelli-atelier_11.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni Settanta · Pannelli</span></div></div>
-      <div class="masonry-item" data-src="images/anni70_pannello-pietra_12.jpg" data-decade="70"><img src="images/anni70_pannello-pietra_12.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni Settanta · Legno</span></div></div>
+      <div class="masonry-item" data-src="images/anni70_totem-legno-esposizione_04.jpg" data-decade="70"><img src="images/anni70_totem-legno-esposizione_04.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/anni70_sculture-legno-atelier_05.jpg" data-decade="70"><img src="images/anni70_sculture-legno-atelier_05.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/anni70_sculture-marmo-pietra_06.jpg" data-decade="70"><img src="images/anni70_sculture-marmo-pietra_06.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/anni70_pannelli-porta-legno_07.jpg" data-decade="70"><img src="images/anni70_pannelli-porta-legno_07.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/anni70_pannello-inciso-legno_08.jpg" data-decade="70"><img src="images/anni70_pannello-inciso-legno_08.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/anni70_atelier-pannelli_09.jpg" data-decade="70"><img src="images/anni70_atelier-pannelli_09.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/anni70_mostra-galleria_10.jpg" data-decade="70"><img src="images/anni70_mostra-galleria_10.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/anni70_pannelli-atelier_11.jpg" data-decade="70"><img src="images/anni70_pannelli-atelier_11.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/anni70_pannello-pietra_12.jpg" data-decade="70"><img src="images/anni70_pannello-pietra_12.jpg" alt="" loading="lazy"></div>
     </div>
   </div>
 
@@ -214,38 +238,33 @@ footer .footer-logo { font-family: var(--font-display); font-size: 0.88rem; colo
   <div class="decade-panel" id="decade-8090">
     <div class="decade-header">
       <h3>Anni Ottanta e Novanta</h3>
-      <p>La decade dell'apertura internazionale e della maturità espressiva. Borgarello allarga il vocabolario verso il marmo e la pietra. Le sculture crescono in dimensione monumentale — totem verticali, figure ogivalI, grandi opere pubbliche permanenti. Il linguaggio si affina verso forme che dialogano con il paesaggio, silenziose come menhir.</p>
+      <p>La decade dell'apertura internazionale e della maturità espressiva. Borgarello allarga il vocabolario verso il marmo e la pietra. Le sculture crescono in dimensione monumentale — totem verticali, figure ogivali, grandi opere pubbliche permanenti. Il linguaggio si affina verso forme che dialogano con il paesaggio, silenziose come menhir.</p>
     </div>
     <div class="masonry">
-      <div class="masonry-item" data-src="images/anni8090_figure-stilizzate-legno_01.jpg" data-decade="8090"><img src="images/anni8090_figure-stilizzate-legno_01.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni 80-90 · Marmo</span></div></div>
-      <div class="masonry-item" data-src="images/anni8090_atelier-sculture_02.jpg" data-decade="8090"><img src="images/anni8090_atelier-sculture_02.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni 80-90 · Legno e marmo</span></div></div>
-      <div class="masonry-item" data-src="images/anni8090_bronzo-legno_03.jpg" data-decade="8090"><img src="images/anni8090_bronzo-legno_03.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni 80-90 · Bronzo e legno</span></div></div>
-      <div class="masonry-item" data-src="images/anni8090_marmo-figura_04.jpg" data-decade="8090"><img src="images/anni8090_marmo-figura_04.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni 80-90 · Marmo</span></div></div>
-      <div class="masonry-item" data-src="images/anni8090_marmo-figura-verticale_05.jpg" data-decade="8090"><img src="images/anni8090_marmo-figura-verticale_05.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni 80-90 · Marmo</span></div></div>
-      <div class="masonry-item" data-src="images/anni8090_marmo-figura-paesaggio_06.jpg" data-decade="8090"><img src="images/anni8090_marmo-figura-paesaggio_06.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni 80-90 · Marmo</span></div></div>
-      <div class="masonry-item" data-src="images/anni8090_granito-scultura-esterna_07.jpg" data-decade="8090"><img src="images/anni8090_granito-scultura-esterna_07.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni 80-90 · Granito</span></div></div>
-      <div class="masonry-item" data-src="images/anni8090_legno-totem-campagna_08.jpg" data-decade="8090"><img src="images/anni8090_legno-totem-campagna_08.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni 80-90 · Legno</span></div></div>
-      <div class="masonry-item" data-src="images/anni8090_marmo-obelisco-tramonto_09.jpg" data-decade="8090"><img src="images/anni8090_marmo-obelisco-tramonto_09.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni 80-90 · Marmo</span></div></div>
-      <div class="masonry-item" data-src="images/anni8090_legno-pietra-dettaglio_10.jpg" data-decade="8090"><img src="images/anni8090_legno-pietra-dettaglio_10.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni 80-90 · Dettaglio</span></div></div>
-      <div class="masonry-item" data-src="images/anni8090_marmo-figure-cielo_11.jpg" data-decade="8090"><img src="images/anni8090_marmo-figure-cielo_11.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni 80-90 · Marmo</span></div></div>
-      <div class="masonry-item" data-src="images/anni8090_marmo-granito-montagna_13.jpg" data-decade="8090"><img src="images/anni8090_marmo-granito-montagna_13.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni 80-90 · Marmo</span></div></div>
-      <div class="masonry-item" data-src="images/anni8090_schizzo-biro_14.jpg" data-decade="8090"><img src="images/anni8090_schizzo-biro_14.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni 80-90 · Schizzo</span></div></div>
-      <div class="masonry-item" data-src="images/anni8090_marmo-figura-mostra_15.jpg" data-decade="8090"><img src="images/anni8090_marmo-figura-mostra_15.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni 80-90 · Marmo</span></div></div>
-      <div class="masonry-item" data-src="images/anni8090_granito-avis-1990_16.jpg" data-decade="8090"><img src="images/anni8090_granito-avis-1990_16.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni 80-90 · Granito</span></div></div>
-      <div class="masonry-item" data-src="images/anni8090_marmo-figura-tramonto_17.jpg" data-decade="8090"><img src="images/anni8090_marmo-figura-tramonto_17.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni 80-90 · Marmo</span></div></div>
-      <div class="masonry-item" data-src="images/anni8090_schizzo-matita_18.jpg" data-decade="8090"><img src="images/anni8090_schizzo-matita_18.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni 80-90 · Schizzo</span></div></div>
-      <div class="masonry-item" data-src="images/anni8090_marmo-figura-campagna_19.jpg" data-decade="8090"><img src="images/anni8090_marmo-figura-campagna_19.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni 80-90 · Marmo</span></div></div>
-      <div class="masonry-item" data-src="images/anni8090_marmo-obelisco-campo_20.jpg" data-decade="8090"><img src="images/anni8090_marmo-obelisco-campo_20.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni 80-90 · Marmo</span></div></div>
-      <div class="masonry-item" data-src="images/anni8090_marmo-figura-prato_21.jpg" data-decade="8090"><img src="images/anni8090_marmo-figura-prato_21.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni 80-90 · Marmo</span></div></div>
-      <div class="masonry-item" data-src="images/anni8090_marmo-scultura-atelier_22.jpg" data-decade="8090"><img src="images/anni8090_marmo-scultura-atelier_22.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni 80-90 · Marmo</span></div></div>
-      <div class="masonry-item" data-src="images/anni8090_granito-avis-opera-pubblica_23.jpg" data-decade="8090"><img src="images/anni8090_granito-avis-opera-pubblica_23.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni 80-90 · Granito · AVIS 1990</span></div></div>
-      <div class="masonry-item" data-src="images/anni8090_marmo-figura-cielo-blu_24.jpg" data-decade="8090"><img src="images/anni8090_marmo-figura-cielo-blu_24.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni 80-90 · Marmo</span></div></div>
-      <div class="masonry-item" data-src="images/anni8090_marmo-dettaglio-faccia_25.jpg" data-decade="8090"><img src="images/anni8090_marmo-dettaglio-faccia_25.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni 80-90 · Marmo · Dettaglio</span></div></div>
-      <div class="masonry-item" data-src="images/anni8090_marmo-tre-lance_26.jpg" data-decade="8090"><img src="images/anni8090_marmo-tre-lance_26.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni 80-90 · Marmo</span></div></div>
-      <div class="masonry-item" data-src="images/anni8090_marmo-figura-granito-dettaglio_27.jpg" data-decade="8090"><img src="images/anni8090_marmo-figura-granito-dettaglio_27.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni 80-90 · Marmo · Tre lance</span></div></div>
-      <div class="masonry-item" data-src="images/anni8090_granito-dettaglio_28.jpg" data-decade="8090"><img src="images/anni8090_granito-dettaglio_28.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni 80-90 · Granito · Dettaglio</span></div></div>
-      <div class="masonry-item" data-src="images/anni8090_granito-totem_29.jpg" data-decade="8090"><img src="images/anni8090_granito-totem_29.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni 80-90 · Granito</span></div></div>
-      <div class="masonry-item" data-src="images/anni8090_granito-scultura-verticale_30.jpg" data-decade="8090"><img src="images/anni8090_granito-scultura-verticale_30.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Anni 80-90 · Granito</span></div></div>
+      <div class="masonry-item" data-src="images/anni8090_marmo-figura_04.jpg" data-decade="8090"><img src="images/anni8090_marmo-figura_04.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/anni8090_marmo-figura-verticale_05.jpg" data-decade="8090"><img src="images/anni8090_marmo-figura-verticale_05.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/anni8090_marmo-figura-paesaggio_06.jpg" data-decade="8090"><img src="images/anni8090_marmo-figura-paesaggio_06.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/anni8090_granito-scultura-esterna_07.jpg" data-decade="8090"><img src="images/anni8090_granito-scultura-esterna_07.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/anni8090_legno-totem-campagna_08.jpg" data-decade="8090"><img src="images/anni8090_legno-totem-campagna_08.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/anni8090_marmo-obelisco-tramonto_09.jpg" data-decade="8090"><img src="images/anni8090_marmo-obelisco-tramonto_09.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/anni8090_legno-pietra-dettaglio_10.jpg" data-decade="8090"><img src="images/anni8090_legno-pietra-dettaglio_10.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/anni8090_marmo-figure-cielo_11.jpg" data-decade="8090"><img src="images/anni8090_marmo-figure-cielo_11.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/anni8090_marmo-granito-montagna_13.jpg" data-decade="8090"><img src="images/anni8090_marmo-granito-montagna_13.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/anni8090_marmo-figura-mostra_15.jpg" data-decade="8090"><img src="images/anni8090_marmo-figura-mostra_15.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/anni8090_granito-avis-1990_16.jpg" data-decade="8090"><img src="images/anni8090_granito-avis-1990_16.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/anni8090_marmo-figura-tramonto_17.jpg" data-decade="8090"><img src="images/anni8090_marmo-figura-tramonto_17.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/anni8090_marmo-figura-campagna_19.jpg" data-decade="8090"><img src="images/anni8090_marmo-figura-campagna_19.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/anni8090_marmo-obelisco-campo_20.jpg" data-decade="8090"><img src="images/anni8090_marmo-obelisco-campo_20.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/anni8090_marmo-figura-prato_21.jpg" data-decade="8090"><img src="images/anni8090_marmo-figura-prato_21.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/anni8090_marmo-scultura-atelier_22.jpg" data-decade="8090"><img src="images/anni8090_marmo-scultura-atelier_22.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/anni8090_granito-avis-opera-pubblica_23.jpg" data-decade="8090"><img src="images/anni8090_granito-avis-opera-pubblica_23.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/anni8090_marmo-figura-cielo-blu_24.jpg" data-decade="8090"><img src="images/anni8090_marmo-figura-cielo-blu_24.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/anni8090_marmo-dettaglio-faccia_25.jpg" data-decade="8090"><img src="images/anni8090_marmo-dettaglio-faccia_25.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/anni8090_marmo-tre-lance_26.jpg" data-decade="8090"><img src="images/anni8090_marmo-tre-lance_26.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/anni8090_marmo-figura-granito-dettaglio_27.jpg" data-decade="8090"><img src="images/anni8090_marmo-figura-granito-dettaglio_27.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/anni8090_granito-dettaglio_28.jpg" data-decade="8090"><img src="images/anni8090_granito-dettaglio_28.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/anni8090_granito-totem_29.jpg" data-decade="8090"><img src="images/anni8090_granito-totem_29.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/anni8090_granito-scultura-verticale_30.jpg" data-decade="8090"><img src="images/anni8090_granito-scultura-verticale_30.jpg" alt="" loading="lazy"></div>
     </div>
   </div>
 
@@ -253,18 +272,18 @@ footer .footer-logo { font-family: var(--font-display); font-size: 0.88rem; colo
   <div class="decade-panel" id="decade-cont">
     <div class="decade-header">
       <h3>Contemporaneo</h3>
-      <p>La stagione della sintesi e della sperimentazione cromatica. Borgarello introduce il colore nel legno — verdi, ocre, turchesi — e sperimenta nuovi materiali come le catene metalliche saldate in figure umane. Le sculture conquistano spazi internazionali. Il corpus si consolida in un'identità riconoscibilissima.</p>
+      <p>La stagione della sintesi e della sperimentazione cromatica. Borgarello introduce il colore nel legno — verdi, ocre, turchesi — e sperimenta nuovi materiali come le catene metalliche saldate in figure umane. Le sculture conquistano spazi internazionali in Israele, Sardegna, Trieste.</p>
     </div>
     <div class="masonry">
-      <div class="masonry-item" data-src="images/contemporaneo_figura-legno-colore_01.jpg" data-decade="cont"><img src="images/contemporaneo_figura-legno-colore_01.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Contemporaneo · Legno</span></div></div>
-      <div class="masonry-item" data-src="images/contemporaneo_legno-policromo_02.jpg" data-decade="cont"><img src="images/contemporaneo_legno-policromo_02.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Contemporaneo · Legno</span></div></div>
-      <div class="masonry-item" data-src="images/contemporaneo_sculture-notturne_03.jpg" data-decade="cont"><img src="images/contemporaneo_sculture-notturne_03.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Contemporaneo · Sculture notturne</span></div></div>
-      <div class="masonry-item" data-src="images/contemporaneo_totem-legno_04.jpg" data-decade="cont"><img src="images/contemporaneo_totem-legno_04.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Contemporaneo · Legno policromo</span></div></div>
-      <div class="masonry-item" data-src="images/contemporaneo_figure-stilizzate-legno_05.jpg" data-decade="cont"><img src="images/contemporaneo_figure-stilizzate-legno_05.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Contemporaneo · Legno · Atelier</span></div></div>
-      <div class="masonry-item" data-src="images/contemporaneo_catene-metallo_06.jpg" data-decade="cont"><img src="images/contemporaneo_catene-metallo_06.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Contemporaneo · Legno · Totem</span></div></div>
-      <div class="masonry-item" data-src="images/contemporaneo_marmo-legno-atelier_07.jpg" data-decade="cont"><img src="images/contemporaneo_marmo-legno-atelier_07.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Contemporaneo · Legno · Atelier</span></div></div>
-      <div class="masonry-item" data-src="images/contemporaneo_atelier-sculture_11.jpg" data-decade="cont"><img src="images/contemporaneo_atelier-sculture_11.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Contemporaneo · Legno · Atelier</span></div></div>
-      <div class="masonry-item" data-src="images/contemporaneo_marmo-legno_12.jpg" data-decade="cont"><img src="images/contemporaneo_marmo-legno_12.jpg" alt="" loading="lazy"><div class="overlay"><span class="overlay-label">Contemporaneo · Marmo e legno</span></div></div>
+      <div class="masonry-item" data-src="images/contemporaneo_figura-legno-colore_01.jpg" data-decade="cont"><img src="images/contemporaneo_figura-legno-colore_01.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/contemporaneo_legno-policromo_02.jpg" data-decade="cont"><img src="images/contemporaneo_legno-policromo_02.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/contemporaneo_sculture-notturne_03.jpg" data-decade="cont"><img src="images/contemporaneo_sculture-notturne_03.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/contemporaneo_totem-legno_04.jpg" data-decade="cont"><img src="images/contemporaneo_totem-legno_04.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/contemporaneo_figure-stilizzate-legno_05.jpg" data-decade="cont"><img src="images/contemporaneo_figure-stilizzate-legno_05.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/contemporaneo_catene-metallo_06.jpg" data-decade="cont"><img src="images/contemporaneo_catene-metallo_06.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/contemporaneo_marmo-legno-atelier_07.jpg" data-decade="cont"><img src="images/contemporaneo_marmo-legno-atelier_07.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/contemporaneo_atelier-sculture_11.jpg" data-decade="cont"><img src="images/contemporaneo_atelier-sculture_11.jpg" alt="" loading="lazy"></div>
+      <div class="masonry-item" data-src="images/contemporaneo_marmo-legno_12.jpg" data-decade="cont"><img src="images/contemporaneo_marmo-legno_12.jpg" alt="" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -276,9 +295,10 @@ footer .footer-logo { font-family: var(--font-display); font-size: 0.88rem; colo
   <button class="lightbox-nav lightbox-next" id="lightbox-next">&#8250;</button>
 </div>
 
+<!-- BIOGRAFIA -->
 <section id="biografia">
   <div class="bio-img-wrap">
-    <img src="images/anni8090_atelier-sculture_02.jpg" alt="Giovanni Borgarello al lavoro">
+    <img src="images/anni8090_marmo-figura-campagna_19.jpg" alt="Giovanni Borgarello">
     <p class="bio-img-caption">Giovanni Borgarello · Cambiano (TO)</p>
   </div>
   <div class="bio-content">
@@ -303,6 +323,7 @@ footer .footer-logo { font-family: var(--font-display); font-size: 0.88rem; colo
   </div>
 </section>
 
+<!-- ESPOSIZIONI -->
 <section id="esposizioni">
   <div class="expo-intro">
     <p class="section-label">Opera nel mondo</p>
@@ -393,6 +414,7 @@ footer .footer-logo { font-family: var(--font-display); font-size: 0.88rem; colo
   </div>
 </section>
 
+<!-- CHI SIAMO -->
 <section id="chisiamo">
   <p class="section-label">L'archivio</p>
   <h2 class="section-title">Chi Siamo</h2>
@@ -405,6 +427,7 @@ footer .footer-logo { font-family: var(--font-display); font-size: 0.88rem; colo
   </div>
 </section>
 
+<!-- CONTATTI -->
 <section id="contatti">
   <div>
     <p class="section-label">Scrivici</p>
