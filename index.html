@@ -57,7 +57,8 @@ section { padding: 6rem 3rem; }
 #galleria { background: #EDE7DA; }
 .gallery-intro { max-width: 560px; margin-bottom: 1rem; }
 .gallery-intro p { font-size: 0.88rem; color: var(--mid); }
-.decade-nav { display: flex; margin-bottom: 3.5rem; border-bottom: 1px solid var(--border); overflow-x: auto; }
+.decade-nav { display: flex; margin-bottom: 3.5rem; border-bottom: 1px solid var(--border); overflow-x: auto; scrollbar-width: none; }
+.decade-nav::-webkit-scrollbar { display: none; }
 .decade-btn { padding: 0.8rem 1.8rem; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); background: none; border: none; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all 0.2s; font-family: var(--font-body); white-space: nowrap; }
 .decade-btn:hover { color: var(--dark); }
 .decade-btn.active { color: var(--dark); border-bottom-color: var(--accent); }
